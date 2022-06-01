@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hogwarts</title>
+    <link rel="stylesheet" href="style.css" /></head>
+<body>
+
+  <header>
+    <img class="logoH" src="images/hogwarts.svg" alt="logo" class="image">
+  </header>
+
+<main>
+
+    <h1>Hogwarts Students</h1>
+
+    <div class="numbersOfStudents">
+      <p class="total">Total of students:</p>
+      <p class="gdStudents">Gryffindor students:</p>
+      <p class="srStudents">Slytherin students:</p>
+      <p class="hpStudents">Hufflepuff students:</p>
+      <p class="rcStudents">Ravenclaw students:</p>
+      <p class="exStudents">Expelled students:</p>
+    </div>
+
+    <div class="filterButtons">
+      <button class="filter" data-action="filter" data-filter="Gryffindor">Gryffindor</button>
+      <button class="filter" data-action="filter" data-filter="Slytherin">Slytherin</button>
+      <button class="filter" data-action="filter" data-filter="Hufflepuff">Hufflepuff</button>
+      <button class="filter" data-action="filter" data-filter="Ravenclaw">Ravenclaw</button>
+      <button class="filter" data-action="filter" data-filter="*">Show all</button>
+      <button class="filter" data-action="filter" data-filter="pure">🩸</button>
+      <button class="filter" data-action="filter" data-filter="Halfblood">✨</button>
+      <button class="filter" data-action="filter" data-filter="Muggle">👀</button>
+    </div>
+ 
+    <div class="searchBox"> 
+      <form id="form">
+        <input type="search" id="searchField" name="search"
+         placeholder="Search for student...">
+         <svg viewBox="0 0 1024 1024"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg>
+        </button>
+      </form>
+    </div>
+
+
+
+    <thead>
+      <tr id="sorting">
+        <th data-action="sort" data-sort-direction="asc" data-sort="prefect">🏆</th>
+        <th data-action="sort" data-sort-direction="asc" data-sort="inquisitorial">⭐</th>
+        <th data-action="sort" data-sort-direction="asc" data-sort="firstnameAz">Name (a-z)</th>
+        <th data-action="sort" data-sort-direction="asc" data-sort="firstnameZa">Name (z-a)</th>
+        <th data-action="sort" data-sort-direction="asc" data-sort="lastnameAz">Lastname (a-z)</th>
+        <th data-action="sort" data-sort-direction="asc" data-sort="lastnameZa">Lastname (z-a)</th>
+        <th data-action="sort" data-sort-direction="asc" data-sort="houseAz">House (a-z)</th>
+        <th data-action="sort" data-sort-direction="asc" data-sort="houseZa">House (z-a)</th>
+        <th></th>
+      </tr>
+    </thead>
+    
+<!-- This is where I copy the list in -->
+ <section id="student_list"> </section>
+
+
+
+<!-- This is the popup window and the article -->
+<section id="popup">
+
+  <div id="close">&#x2715</div>
+
+  <article id="popupWindow">
+
+      <img src="" alt="" class="image">
+      <p data-field="firstname"></p>
+      <p data-field="nickname"></p>
+      <p data-field="middlename"></p>
+      <p data-field="lastname"></p>
+      <p data-field="house"></p>
+      <p data-field="gender"></p>
+      <p data-field="blood"></p>
+      <p data-field="prefect" data-prefect="false">Prefect </p>
+      <p data-field="inquisitorial">☆</p>  
+      <img src="" alt="" class="crest">
+
+  </article>
+</section>
+
+
+<!-- this is the student template how its going to look -->
+      <template id="student_template">
+
+        <article id="studentArticle">
+
+<img src="" alt="" class="image">
+<p data-field="fullname"></p>
+<p data-field="house"></p>
+<p data-field="prefect" data-prefect="false">Prefect </p>
+<p data-field="inquisitorial">☆</p>
+<button class="showMbtn">Show more</button>
+
+        </article>
+        </template>
+
+    <div id="remove_prefect" class="modal hide">
+<article class="dialog">
+  <button class="closeDialogBtn">X</button>
+  <h2>Oopsie doopsie🤪</h2>
+  <p>There can ONLY be two prefects from each house. Delete or whatever, up to you😏</p>
+<div class="sidebyside"> 
+  <button id="removeA">Leap of faith</button>
+  <p data-field="firstnamea"></p>
+  <br>
+  <button id="removeB">You´re a wizzard</button>
+  <p data-field="firstnameb"></p>
+</div>
+</article>
+        </div>
+
+
+      </main>
+    <script src="script.js"></script>
+</body>
+</html>
